@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  .card {
+    width: 1280px; height: 640px; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #101829 0%, #0a0f1e 100%);
+    color: #edeef6; font-family: "Manrope", sans-serif;
+    padding: 70px 76px; display: flex; flex-direction: column;
+  }
+  .dots { position: absolute; inset: 0; background-image: radial-gradient(#59627e 1.6px, transparent 1.6px); background-size: 28px 28px; opacity: 0.2; }
+  .edge { position: absolute; inset: 0; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.05); }
+  .top { position: relative; display: flex; align-items: center; justify-content: space-between; font-family: "JetBrains Mono", monospace; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 25px; font-weight: 600; letter-spacing: -0.01em; }
+  .sq { width: 24px; height: 24px; border-radius: 7px; background: linear-gradient(135deg, #8f8cf8, #6d5cf0); }
+  .kind { font-size: 19px; color: #8a93ad; }
+  .h { position: relative; margin-top: 78px; font-size: 76px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; }
+  .h em { color: #9a97fb; font-style: normal; }
+  .bar { position: relative; width: 56px; height: 5px; border-radius: 3px; background: #8f8cf8; margin: 36px 0 24px; }
+  .sub { position: relative; font-family: "JetBrains Mono", monospace; font-size: 22px; color: #aeb6cc; letter-spacing: 0; }
+  .foot { position: relative; margin-top: 34px; display: flex; align-items: baseline; gap: 22px; }
+  .repo { font-family: "JetBrains Mono", monospace; font-size: 23px; color: #9a97fb; }
+  .tag { font-family: "JetBrains Mono", monospace; font-size: 18px; color: #7f8aa3; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="dots"></div>
+    <div class="edge"></div>
+    <div class="top">
+      <div class="brand"><span class="sq"></span>trust-ledger</div>
+      <div class="kind">reference implementation + case study</div>
+    </div>
+    <div class="h">A double-entry trust ledger<br>money <em>can't leak out of</em>.</div>
+    <div class="bar"></div>
+    <div class="sub">one write door&nbsp; ·&nbsp; append-only&nbsp; ·&nbsp; correction by reversal&nbsp; ·&nbsp; no FK on journal lines</div>
+    <div class="foot">
+      <span class="repo">github.com/Shehab1106/trust-ledger</span>
+      <span class="tag">TypeScript · tested</span>
+    </div>
+  </div>
+</body>
+</html>
