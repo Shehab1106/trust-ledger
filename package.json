@@ -2,14 +2,24 @@
   "name": "trust-ledger-reference",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
-  "description": "A clean-room reference implementation of the trust-accounting ledger patterns described in this repo's write-up.",
+  "description": "A clean-room reference implementation of a double-entry trust ledger: a runnable test suite and an interactive demo.",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "next": "14.2.35",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
   "devDependencies": {
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
     "typescript": "5.5.3",
     "vitest": "2.0.5"
   }
