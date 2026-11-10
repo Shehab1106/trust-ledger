@@ -74,6 +74,11 @@ export default function Console() {
       if (model === "management") {
         const commission = Math.round((nri * (parseFloat(feePct) || 0)) / 100)
         const ownerNet = nri - commission
+        if (ownerNet < 0) {
+          c.current.booking--
+          setFlash({ kind: "bad", msg: "A management fee over 100% would pay the owner a negative amount. Lower the fee." })
+          return
+        }
         ledger.post({
           idempotencyKey: `bk_${n}`,
           book: "trust",
@@ -220,10 +225,10 @@ export default function Console() {
     }
     try {
       if (candidate.transferId) {
-        ledger.reverseTransfer(candidate.transferId, { date: "2026-04-01", idempotencyKeyPrefix: `rev_${++c.current.rev}` })
+        ledger.reverseTransfer(candidate.transferId, { date: "2026-04-01", idempotencyKeyPrefix: `rev_${++c.current.rev}`, memo: `reversal of #${candidate.sequence}` })
         setFlash({ kind: "ok", msg: "Reversed both legs of the transfer together. A single leg can't be reversed alone." })
       } else {
-        const r = ledger.reverse(candidate.id, { idempotencyKey: `rev_${++c.current.rev}`, date: "2026-04-01" })
+        const r = ledger.reverse(candidate.id, { idempotencyKey: `rev_${++c.current.rev}`, date: "2026-04-01", memo: `reversal of #${candidate.sequence}` })
         setFlash({ kind: "ok", msg: `Corrected entry #${candidate.sequence} with a reversing entry #${r.sequence}. Both stay on the record.` })
       }
     } catch (e) {
