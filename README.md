@@ -1,6 +1,8 @@
 # Designing a trust-accounting ledger money can't leak out of
 
-A short architecture case study on a double-entry trust ledger I built in production for a
+[![CI](https://github.com/Shehab1106/trust-ledger/actions/workflows/ci.yml/badge.svg)](https://github.com/Shehab1106/trust-ledger/actions/workflows/ci.yml)
+
+A short architecture write-up on a double-entry trust ledger I built in production for a
 property-management platform. The point is how the system makes a wrong number impossible to
 represent, not just unlikely.
 
