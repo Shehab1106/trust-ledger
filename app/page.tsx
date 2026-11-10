@@ -54,6 +54,8 @@ export default function Console() {
   // amount owed on a credit-normal account (balance is negative)
   const owed = (book: Book, account: string) =>
     -(ledger.balances(book).get(`${book}:${account}`) ?? 0)
+  // cash a book currently holds (debit-normal, so positive = has cash)
+  const cashOf = (book: Book) => ledger.balances(book).get(`${book}:cash`) ?? 0
 
   function keep(lines: JournalLine[]) {
     return lines.filter((l) => l.amount > 0)
@@ -121,6 +123,11 @@ export default function Console() {
           setFlash({ kind: "bad", msg: "Nothing owed to the owner yet. Record a booking first." })
           return
         }
+        if (cashOf("trust") < amount) {
+          c.current.pay--
+          setFlash({ kind: "bad", msg: `Not enough cash in the trust book (${fmt(cashOf("trust"))}) to pay out ${fmt(amount)}. You can't disburse money you don't hold.` })
+          return
+        }
         ledger.post({
           idempotencyKey: `pay_${n}`,
           book: "trust",
@@ -137,6 +144,11 @@ export default function Console() {
         if (amount <= 0) {
           c.current.pay--
           setFlash({ kind: "bad", msg: "Set the owner's rent first." })
+          return
+        }
+        if (cashOf("operating") < amount) {
+          c.current.pay--
+          setFlash({ kind: "bad", msg: `Not enough cash in the operating book (${fmt(cashOf("operating"))}) to pay ${fmt(amount)} rent. Record a booking first — you can't pay out money you don't hold.` })
           return
         }
         ledger.post({
@@ -161,6 +173,10 @@ export default function Console() {
     const amount = owed("trust", "due_to_operating")
     if (amount <= 0) {
       setFlash({ kind: "bad", msg: "No commission to sweep. Record a booking first." })
+      return
+    }
+    if (cashOf("trust") < amount) {
+      setFlash({ kind: "bad", msg: `Not enough cash in the trust book (${fmt(cashOf("trust"))}) to sweep ${fmt(amount)}. Pay the owner after sweeping, not before.` })
       return
     }
     const n = ++c.current.sweep
