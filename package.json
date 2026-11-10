@@ -1,0 +1,16 @@
+{
+  "name": "trust-ledger-reference",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A clean-room reference implementation of the trust-accounting ledger patterns described in this repo's write-up.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "5.5.3",
+    "vitest": "2.0.5"
+  }
+}

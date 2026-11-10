@@ -1,9 +1,23 @@
 # Designing a trust-accounting ledger money can't leak out of
 
 A short architecture case study on a double-entry trust ledger I built in production for a
-property-management platform. It is pattern level on purpose: the decisions and the reasoning,
-not the source. The point is how the system makes a wrong number impossible to represent, not
-just unlikely.
+property-management platform. The point is how the system makes a wrong number impossible to
+represent, not just unlikely.
+
+It is pattern level on purpose, but it is not only prose. A clean-room reference implementation
+of these ideas ships alongside it, so the claims below are runnable:
+
+```bash
+npm install
+npm test
+```
+
+`src/` is a double-entry trust ledger in TypeScript (a single write door, append-only store,
+correction by reversal, locked periods); `tests/` proves each invariant below; `db/schema.sql`
+shows the same rules enforced by Postgres (append-only triggers, balance checks, and the
+no-foreign-key decision on the journal lines). It is a reference implementation of standard
+double-entry and trust-accounting principles with invented example data, not production code and
+not anyone's proprietary system.
 
 ## The problem
 
