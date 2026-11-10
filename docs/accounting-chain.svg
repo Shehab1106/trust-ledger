@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 568" width="760" height="568" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-label="The accounting chain: money moves one direction through seven layers. The operational layers (facts, transactions and categories, business model, dated split grid) are regenerated freely. The trust and operating ledger is the permanent, append-only record. Statements, payout runs and bank reconciliation read the books downstream.">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101829"/>
+      <stop offset="1" stop-color="#0c1322"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="759" height="567" rx="18" fill="url(#panel)"/>
+  <rect x="1" y="1" width="758" height="566" rx="17.5" fill="none" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- header -->
+  <text x="32" y="36" font-size="17" font-weight="600" fill="#e8eaf2">The accounting chain</text>
+  <text x="728" y="36" text-anchor="end" font-size="12.5" fill="#7f8aa3">money moves one direction  &#8595;</text>
+  <line x1="32" y1="48" x2="728" y2="48" stroke="#ffffff" stroke-opacity="0.07"/>
+
+  <!-- flow rail -->
+  <line x1="44" y1="86" x2="44" y2="506" stroke="#39425c" stroke-width="1.6"/>
+
+  <!-- r0 -->
+  <rect x="62" y="64" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="64.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="86" r="3.4" fill="#5b667f"/>
+  <text x="84" y="91" font-size="14.5" font-weight="600" fill="#e3e7f1">PMS or manual facts</text>
+  <text x="612" y="90.5" text-anchor="end" font-size="12" fill="#8089a0">raw inputs</text>
+
+  <!-- r1 -->
+  <rect x="62" y="134" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="134.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="156" r="3.4" fill="#5b667f"/>
+  <text x="84" y="161" font-size="14.5" font-weight="600" fill="#e3e7f1">transactions + categories</text>
+  <text x="612" y="160.5" text-anchor="end" font-size="12" fill="#8089a0">classify what the money IS</text>
+
+  <!-- r2 -->
+  <rect x="62" y="204" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="204.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="226" r="3.4" fill="#5b667f"/>
+  <text x="84" y="231" font-size="14.5" font-weight="600" fill="#e3e7f1">business model</text>
+  <text x="612" y="230.5" text-anchor="end" font-size="12" fill="#8089a0">author the agreement</text>
+
+  <!-- r3 -->
+  <rect x="62" y="274" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="274.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="296" r="3.4" fill="#5b667f"/>
+  <text x="84" y="301" font-size="14.5" font-weight="600" fill="#e3e7f1">dated split grid</text>
+  <text x="612" y="300.5" text-anchor="end" font-size="12" fill="#8089a0">price it, frozen at a version</text>
+
+  <!-- r4  permanent ledger -->
+  <rect x="62" y="344" width="566" height="44" rx="11" fill="#1c2748"/>
+  <rect x="62.75" y="344.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#7d7bf6" stroke-opacity="0.75" stroke-width="1.3"/>
+  <circle cx="44" cy="366" r="4" fill="#7d7bf6"/>
+  <text x="84" y="371" font-size="14.5" font-weight="700" fill="#f0f1fb">trust + operating ledger</text>
+  <text x="612" y="370.5" text-anchor="end" font-size="12" fill="#b9b8fb">record balanced, posted events</text>
+
+  <!-- r5 -->
+  <rect x="62" y="414" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="414.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="436" r="3.4" fill="#5b667f"/>
+  <text x="84" y="441" font-size="14.5" font-weight="600" fill="#e3e7f1">statements + payout runs</text>
+  <text x="612" y="440.5" text-anchor="end" font-size="12" fill="#8089a0">read the books</text>
+
+  <!-- r6 -->
+  <rect x="62" y="484" width="566" height="44" rx="11" fill="#182036"/>
+  <rect x="62.75" y="484.75" width="564.5" height="42.5" rx="10.3" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+  <circle cx="44" cy="506" r="3.4" fill="#5b667f"/>
+  <text x="84" y="511" font-size="14.5" font-weight="600" fill="#e3e7f1">bank reconciliation</text>
+  <text x="612" y="510.5" text-anchor="end" font-size="12" fill="#8089a0">match cash, never create it</text>
+
+  <!-- down chevrons on the rail -->
+  <g stroke="#4a5470" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 118 l4 4 l4 -4"/>
+    <path d="M40 188 l4 4 l4 -4"/>
+    <path d="M40 258 l4 4 l4 -4"/>
+    <path d="M40 328 l4 4 l4 -4"/>
+    <path d="M40 398 l4 4 l4 -4"/>
+    <path d="M40 468 l4 4 l4 -4"/>
+  </g>
+
+  <!-- right-side hierarchy brackets -->
+  <path d="M652 66 h10 v248 h-10" fill="none" stroke="#454f6b" stroke-width="1.4"/>
+  <text x="690" y="190" transform="rotate(90 690 190)" text-anchor="middle" font-size="12" font-weight="600" fill="#8089a0">regenerated freely</text>
+
+  <path d="M652 346 h10 v40 h-10" fill="none" stroke="#7d7bf6" stroke-width="1.5"/>
+  <text x="690" y="366" transform="rotate(90 690 366)" text-anchor="middle" font-size="12" font-weight="700" fill="#b9b8fb">permanent</text>
+
+  <path d="M652 416 h10 v112 h-10" fill="none" stroke="#454f6b" stroke-width="1.4"/>
+  <text x="690" y="472" transform="rotate(90 690 472)" text-anchor="middle" font-size="12" font-weight="600" fill="#8089a0">reads the books</text>
+</svg>
