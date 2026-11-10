@@ -421,13 +421,6 @@ export default function Console() {
               )
             })}
           </div>
-
-          <p className="footnote">
-            Nothing here is a mock: the buttons call a real double-entry ledger (single write boundary,
-            append-only store, correction by reversal, locked periods, trust/operating separation). The
-            same code ships with a <a href="https://github.com/Shehab1106/trust-ledger" target="_blank" rel="noopener noreferrer">passing test suite and a Postgres schema</a> that
-            enforces the invariants at the database layer, including the no-foreign-key decision on the journal lines.
-          </p>
         </section>
       </div>
     </main>
