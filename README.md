@@ -5,19 +5,24 @@ property-management platform. The point is how the system makes a wrong number i
 represent, not just unlikely.
 
 It is pattern level on purpose, but it is not only prose. A clean-room reference implementation
-of these ideas ships alongside it, so the claims below are runnable:
+of these ideas ships alongside it, so the claims below are runnable.
+
+**Live demo: [trust-ledger-shehab14.vercel.app](https://trust-ledger-shehab14.vercel.app)** — post
+bookings, disburse to owners across both books, reverse entries, close a period, and watch the
+books stay correct to the cent, then try to slip in a broken entry and watch it get refused.
 
 ```bash
 npm install
-npm test
+npm test        # 15 tests: the invariants below
+npm run dev     # the interactive console, at localhost:3000
 ```
 
 `src/` is a double-entry trust ledger in TypeScript (a single write door, append-only store,
-correction by reversal, locked periods); `tests/` proves each invariant below; `db/schema.sql`
-shows the same rules enforced by Postgres (append-only triggers, balance checks, and the
-no-foreign-key decision on the journal lines). It is a reference implementation of standard
-double-entry and trust-accounting principles with invented example data, not production code and
-not anyone's proprietary system.
+correction by reversal, locked periods); `app/` is the interactive console that drives it;
+`tests/` proves each invariant below; `db/schema.sql` shows the same rules enforced by Postgres
+(append-only triggers, balance checks, and the no-foreign-key decision on the journal lines). It
+is a reference implementation of standard double-entry and trust-accounting principles with
+invented example data, not production code and not anyone's proprietary system.
 
 ## The problem
 
