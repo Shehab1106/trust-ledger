@@ -13,16 +13,21 @@ books stay correct to the cent, then try to slip in a broken entry and watch it 
 
 ```bash
 npm install
-npm test        # 15 tests: the invariants below
+npm test        # 15 tests: the invariants below, in the TypeScript engine
+npm run test:db # the same rules, enforced by a real Postgres (needs Docker)
 npm run dev     # the interactive console, at localhost:3000
 ```
 
 `src/` is a double-entry trust ledger in TypeScript (a single write door, append-only store,
 correction by reversal, locked periods); `app/` is the interactive console that drives it;
-`tests/` proves each invariant below; `db/schema.sql` shows the same rules enforced by Postgres
-(append-only triggers, balance checks, and the no-foreign-key decision on the journal lines). It
-is a reference implementation of standard double-entry and trust-accounting principles with
-invented example data, not production code and not anyone's proprietary system.
+`tests/` proves each invariant below. `db/schema.sql` enforces the same rules in Postgres itself
+(append-only triggers, a deferred balance-and-single-book check, the no-foreign-key decision on the
+journal lines), and it is not just prose: `npm run test:db` stands up a real database with
+testcontainers, applies the schema, and shows an update/delete of posted history refused, an
+unbalanced or cross-book entry refused, a line remembering a booking that no longer exists, and the
+idempotency key refusing a double-post under a concurrent race. It is a reference implementation of
+standard double-entry and trust-accounting principles with invented example data, not production
+code and not anyone's proprietary system.
 
 ## The problem
 
